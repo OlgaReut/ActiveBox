@@ -25,6 +25,14 @@ body {
     background: url(../media/banner.png) center/cover no-repeat;
     position: relative;
 
+    @media screen and (max-width: 1024px) {
+        padding: 257px 0 126px;
+    }
+
+    @media screen and (max-width: 320px){
+        padding: 106px 0 52px;
+    }
+
     &::before {
         content: '';
         display: block;
@@ -45,10 +53,28 @@ body {
         @include font(64px, 75px, 900, $color-text);
         text-transform: uppercase;
         margin-bottom: 31.43px;
+
+        @media screen and (max-width: 1024px) {
+            @include font(48px, 56px, 900, $color-text);
+            margin-bottom: 61.86px;
+        }
+
+        @media screen and (max-width: 320px){
+            @include font(36px, 42px, 900, $color-text);
+            margin-bottom: 32.71px;
+        }
     }
 
     &__text {
         @include font(24px, 28px, 400, $color-text);
+
+        @media screen and (max-width: 1024px) {
+            @include font(18px, 21px, 400, $color-text);
+        }
+
+        @media screen and (max-width: 320px){
+            @include font(14px, 16px, 400, $color-text);
+        }
     }
 
     &__button {
@@ -60,6 +86,26 @@ body {
         text-transform: uppercase;
         padding: 26px 5px;
         border: none;
+
+        &:hover {
+            background-color: #E71414;
+        }
+
+        &:active {
+            background-color: $color-button;
+            box-shadow: 4px 4px 30px 0 $color-button;
+        }
+
+        @media screen and (max-width: 1024px) {
+            margin-top: 89.14px;
+            max-width: 314px;
+        }
+
+        @media screen and (max-width: 320px){
+            margin-top: 49.29px;
+            max-width: 280px;
+            padding: 16px 5px;
+        }
     }
 }
 
@@ -68,4 +114,12 @@ body {
     width: 100%;
     padding: 0 15px;
     margin: 0 auto;
+
+    @media screen and (max-width: 1024px){
+        max-width: 984px;
+    }
+
+    @media screen and (max-width: 320px){
+        max-width: 280px;
+    }
 }
