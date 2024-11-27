@@ -1,0 +1,71 @@
+$Raleway: "Raleway", sans-serif;
+$Cardo: "Cardo", serif;
+$color-text: #FFFFFF;
+$color-button: #FF4343;
+
+@mixin font($fontSize, $lineHeight, $fontWeight, $color) {
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    font-weight: $fontWeight;
+    color: $color;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $Raleway;
+}
+
+.banner {
+    padding: 230px 0 120px;
+    background: url(../media/banner.png) center/cover no-repeat;
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba($color: #252B49, $alpha: 0.8);
+    }
+
+    &__container {
+        position: relative;
+        text-align: center
+    }
+
+    &__title {
+        @include font(64px, 75px, 900, $color-text);
+        text-transform: uppercase;
+        margin-bottom: 31.43px;
+    }
+
+    &__text {
+        @include font(24px, 28px, 400, $color-text);
+    }
+
+    &__button {
+        margin-top: 79.57px;
+        max-width: 370px;
+        width: 100%;
+        background-color: $color-button;
+        @include font(24px, 28px, 900, $color-text);
+        text-transform: uppercase;
+        padding: 26px 5px;
+        border: none;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
