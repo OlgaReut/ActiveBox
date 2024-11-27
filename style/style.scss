@@ -2,6 +2,7 @@ $Raleway: "Raleway", sans-serif;
 $Cardo: "Cardo", serif;
 $color-text: #FFFFFF;
 $color-button: #FF4343;
+$color-border: #BABBC5;
 
 @mixin font($fontSize, $lineHeight, $fontWeight, $color) {
     font-size: $fontSize;
@@ -18,6 +19,22 @@ $color-button: #FF4343;
 
 body {
     font-family: $Raleway;
+    position: relative;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+
+    @media screen and (max-width: 1024px){
+        max-width: 984px;
+    }
+
+    @media screen and (max-width: 320px){
+        max-width: 280px;
+    }
 }
 
 .banner {
@@ -109,17 +126,118 @@ body {
     }
 }
 
-.container {
-    max-width: 1200px;
-    width: 100%;
-    padding: 0 15px;
-    margin: 0 auto;
+.header {
+    position: fixed;
+    top: 0;
+    left: calc(50% - 600px);
+    z-index: 10;
+    padding-top: 38.36px;
 
-    @media screen and (max-width: 1024px){
-        max-width: 984px;
+    @media screen and (max-width: 1024px) {
+        padding: 38px 20px 0;
+        left: 0;
     }
 
-    @media screen and (max-width: 320px){
-        max-width: 280px;
+    @media screen and (max-width: 320px) {
+        padding: 0 20px 0;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 316.14px;
+        border-bottom: 1px solid $color-border;
+
+        @media screen and (max-width: 1024px) {
+            column-gap: 234.14px
+        }
+
+        @media screen and (max-width: 320px) {
+            column-gap: 121.53px;
+            border-bottom: none;
+            align-items: center;
+        }
+    }
+
+    &__wrapper-icon {
+        max-width: 183.86px;
+        width: 100%;
+
+        & svg {
+            @media screen and (max-width: 320px) {
+                max-width: 103.47px;
+            }
+        }
+    }
+
+    &__nav {
+        @media screen and (max-width: 320px) {
+            display: none;
+        }
+    }
+
+    &__nav-list {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+    }
+
+    &__nav-item {
+        min-width: 134px;
+        padding-bottom: 38px;
+        text-align: center;
+        position: relative;
+
+        &:hover::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: $color-border;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        &:active::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: #E71414;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        .header__nav-link:active {
+            color: #E71414;
+        }
+
+        @media screen and (max-width: 1024px) {
+            min-width: 112px;
+        }
+    }
+
+    &__nav-link {
+        text-decoration: none;
+        @include font(13px, 15px, 700, $color-text);
+        text-transform: uppercase;
+
+        @media screen and (max-width: 1024px) {
+            @include font(12px, 14px, 700, $color-text);
+        }
+    }
+
+    &__menu {
+        display: none;
+
+        @media screen and (max-width: 320px) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 55px;
+            height: 56px;
+        }
     }
 }
+
