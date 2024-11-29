@@ -6,39 +6,31 @@
 
 body {
   font-family: "Raleway", sans-serif;
-  position: relative;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1210px;
   width: 100%;
-  padding: 0 15px;
+  padding: 0 20px;
   margin: 0 auto;
-}
-@media screen and (max-width: 1024px) {
-  .container {
-    max-width: 984px;
-  }
-}
-@media screen and (max-width: 320px) {
-  .container {
-    max-width: 280px;
-  }
 }
 
 .banner {
   padding: 230px 0 120px;
   background: url(../media/banner.png) center/cover no-repeat;
   position: relative;
+  margin-bottom: 109px;
 }
 @media screen and (max-width: 1024px) {
   .banner {
     padding: 257px 0 126px;
+    margin-bottom: 78px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .banner {
     padding: 106px 0 52px;
+    margin-bottom: 40px;
   }
 }
 .banner::before {
@@ -72,7 +64,7 @@ body {
     margin-bottom: 61.86px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .banner__title {
     font-size: 36px;
     line-height: 42px;
@@ -95,7 +87,7 @@ body {
     color: #FFFFFF;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .banner__text {
     font-size: 14px;
     line-height: 16px;
@@ -115,6 +107,7 @@ body {
   text-transform: uppercase;
   padding: 26px 5px;
   border: none;
+  cursor: pointer;
 }
 .banner__button:hover {
   background-color: #E71414;
@@ -129,7 +122,7 @@ body {
     max-width: 314px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .banner__button {
     margin-top: 49.29px;
     max-width: 280px;
@@ -140,86 +133,68 @@ body {
 .header {
   position: fixed;
   top: 0;
-  left: calc(50% - 600px);
-  z-index: 10;
-  padding-top: 38.36px;
+  left: 0;
+  z-index: 1;
+  width: 100%;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 767px) {
   .header {
-    padding: 38px 20px 0;
-    left: 0;
-  }
-}
-@media screen and (max-width: 320px) {
-  .header {
-    padding: 0 20px 0;
+    padding: 19px 0;
   }
 }
 .header__container {
   display: flex;
   justify-content: space-between;
-  -moz-column-gap: 316.14px;
-       column-gap: 316.14px;
+  align-items: center;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
   border-bottom: 1px solid #BABBC5;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 767px) {
   .header__container {
-    -moz-column-gap: 234.14px;
-         column-gap: 234.14px;
-  }
-}
-@media screen and (max-width: 320px) {
-  .header__container {
-    -moz-column-gap: 121.53px;
-         column-gap: 121.53px;
     border-bottom: none;
     align-items: center;
   }
 }
 .header__wrapper-icon {
+  display: flex;
   max-width: 183.86px;
   width: 100%;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .header__wrapper-icon svg {
     max-width: 103.47px;
   }
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .header__nav {
     display: none;
   }
 }
 .header__nav-list {
   display: flex;
-  justify-content: space-between;
   list-style: none;
 }
 .header__nav-item {
   min-width: 134px;
-  padding-bottom: 38px;
   text-align: center;
   position: relative;
 }
-.header__nav-item:hover::before {
+.header__nav-item::before {
   content: "";
   display: block;
   width: 100%;
   height: 3px;
-  background-color: #BABBC5;
+  background-color: transparentr;
   position: absolute;
   bottom: 0;
   left: 0;
 }
+.header__nav-item:hover::before {
+  background-color: #BABBC5;
+}
 .header__nav-item:active::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 3px;
   background-color: #E71414;
-  position: absolute;
-  bottom: 0;
-  left: 0;
 }
 .header__nav-item .header__nav-link:active {
   color: #E71414;
@@ -229,6 +204,13 @@ body {
     min-width: 112px;
   }
 }
+@media screen and (max-width: 810px) {
+  .header__nav-item {
+    min-width: -moz-max-content;
+    min-width: max-content;
+    padding: 0 10px;
+  }
+}
 .header__nav-link {
   text-decoration: none;
   font-size: 13px;
@@ -236,6 +218,9 @@ body {
   font-weight: 700;
   color: #FFFFFF;
   text-transform: uppercase;
+  padding-top: 36px;
+  padding-bottom: 35px;
+  display: block;
 }
 @media screen and (max-width: 1024px) {
   .header__nav-link {
@@ -248,12 +233,99 @@ body {
 .header__menu {
   display: none;
 }
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 767px) {
   .header__menu {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 55px;
-    height: 56px;
+    width: 24px;
+    height: 18px;
+  }
+}
+
+.features__container {
+  margin-bottom: 116px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  -moz-column-gap: 31px;
+       column-gap: 31px;
+  row-gap: 89px;
+}
+@media screen and (max-width: 1024px) {
+  .features__container {
+    margin-bottom: 80px;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
+    row-gap: 50px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .features__container {
+    margin-bottom: 35px;
+    grid-template-columns: 1fr;
+    row-gap: 41.46px;
+  }
+}
+.features__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+.features__wrapper-icon {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  margin-bottom: 29px;
+}
+@media screen and (max-width: 1024px) {
+  .features__wrapper-icon {
+    width: 85px;
+    height: 84px;
+    margin-bottom: 24.52px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .features__wrapper-icon {
+    width: 75px;
+    height: 74px;
+    margin-bottom: 22px;
+  }
+}
+.features__title {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 900;
+  color: #2D3033;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 1024px) {
+  .features__title {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 900;
+    color: #2D3033;
+    margin-bottom: 4px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .features__title {
+    margin-bottom: 0;
+  }
+}
+.features__text {
+  font-size: 18px;
+  line-height: 21px;
+  font-weight: 400;
+  color: #6C7279;
+  text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  .features__text {
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #6C7279;
   }
 }/*# sourceMappingURL=style.css.map */

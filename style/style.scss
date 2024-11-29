@@ -3,6 +3,8 @@ $Cardo: "Cardo", serif;
 $color-text: #FFFFFF;
 $color-button: #FF4343;
 $color-border: #BABBC5;
+$color-title: #2D3033;
+$color-features: #6C7279;
 
 @mixin font($fontSize, $lineHeight, $fontWeight, $color) {
     font-size: $fontSize;
@@ -19,35 +21,29 @@ $color-border: #BABBC5;
 
 body {
     font-family: $Raleway;
-    position: relative;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1210px;
     width: 100%;
-    padding: 0 15px;
+    padding: 0 20px;
     margin: 0 auto;
-
-    @media screen and (max-width: 1024px){
-        max-width: 984px;
-    }
-
-    @media screen and (max-width: 320px){
-        max-width: 280px;
-    }
 }
 
 .banner {
     padding: 230px 0 120px;
     background: url(../media/banner.png) center/cover no-repeat;
     position: relative;
+    margin-bottom: 109px;
 
     @media screen and (max-width: 1024px) {
         padding: 257px 0 126px;
+        margin-bottom: 78px;
     }
 
-    @media screen and (max-width: 320px){
+    @media screen and (max-width: 767px){
         padding: 106px 0 52px;
+        margin-bottom: 40px;
     }
 
     &::before {
@@ -76,7 +72,7 @@ body {
             margin-bottom: 61.86px;
         }
 
-        @media screen and (max-width: 320px){
+        @media screen and (max-width: 767px){
             @include font(36px, 42px, 900, $color-text);
             margin-bottom: 32.71px;
         }
@@ -89,7 +85,7 @@ body {
             @include font(18px, 21px, 400, $color-text);
         }
 
-        @media screen and (max-width: 320px){
+        @media screen and (max-width: 767px){
             @include font(14px, 16px, 400, $color-text);
         }
     }
@@ -103,6 +99,7 @@ body {
         text-transform: uppercase;
         padding: 26px 5px;
         border: none;
+        cursor: pointer;
 
         &:hover {
             background-color: #E71414;
@@ -118,7 +115,7 @@ body {
             max-width: 314px;
         }
 
-        @media screen and (max-width: 320px){
+        @media screen and (max-width: 767px){
             margin-top: 49.29px;
             max-width: 280px;
             padding: 16px 5px;
@@ -129,85 +126,75 @@ body {
 .header {
     position: fixed;
     top: 0;
-    left: calc(50% - 600px);
-    z-index: 10;
-    padding-top: 38.36px;
+    left: 0;
+    z-index: 1;
+    width: 100%;
 
-    @media screen and (max-width: 1024px) {
-        padding: 38px 20px 0;
-        left: 0;
-    }
-
-    @media screen and (max-width: 320px) {
-        padding: 0 20px 0;
+    @media screen and (max-width: 767px) {
+        padding: 19px 0;
     }
 
     &__container {
         display: flex;
         justify-content: space-between;
-        column-gap: 316.14px;
+        align-items: center;
+        column-gap: 30px;
         border-bottom: 1px solid $color-border;
 
         @media screen and (max-width: 1024px) {
-            column-gap: 234.14px
+            // max-width: 984px;
         }
 
-        @media screen and (max-width: 320px) {
-            column-gap: 121.53px;
+        @media screen and (max-width: 767px) {
             border-bottom: none;
             align-items: center;
         }
     }
 
     &__wrapper-icon {
+        display: flex;
         max-width: 183.86px;
         width: 100%;
 
         & svg {
-            @media screen and (max-width: 320px) {
+            @media screen and (max-width: 767px) {
                 max-width: 103.47px;
             }
         }
     }
 
     &__nav {
-        @media screen and (max-width: 320px) {
+        @media screen and (max-width: 767px) {
             display: none;
         }
     }
 
     &__nav-list {
         display: flex;
-        justify-content: space-between;
         list-style: none;
     }
 
     &__nav-item {
         min-width: 134px;
-        padding-bottom: 38px;
         text-align: center;
         position: relative;
 
-        &:hover::before {
+        &::before {
             content: '';
             display: block;
             width: 100%;
             height: 3px;
-            background-color: $color-border;
+            background-color: transparentr;
             position: absolute;
             bottom: 0;
             left: 0;
         }
+        &:hover::before{
+            background-color: $color-border;
+        }
 
         &:active::before {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 3px;
             background-color: #E71414;
-            position: absolute;
-            bottom: 0;
-            left: 0;
         }
         .header__nav-link:active {
             color: #E71414;
@@ -216,12 +203,20 @@ body {
         @media screen and (max-width: 1024px) {
             min-width: 112px;
         }
+
+        @media screen and (max-width: 810px) {
+            min-width: max-content;
+            padding: 0 10px;
+        }
     }
 
     &__nav-link {
         text-decoration: none;
         @include font(13px, 15px, 700, $color-text);
         text-transform: uppercase;
+        padding-top: 36px;
+        padding-bottom: 35px;
+        display: block;
 
         @media screen and (max-width: 1024px) {
             @include font(12px, 14px, 700, $color-text);
@@ -231,12 +226,85 @@ body {
     &__menu {
         display: none;
 
-        @media screen and (max-width: 320px) {
+        @media screen and (max-width: 767px) {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 55px;
-            height: 56px;
+            width: 24px;
+            height: 18px;
+        }
+    }
+}
+
+.features {
+
+    &__container {
+        margin-bottom: 116px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 31px;
+        row-gap: 89px;
+
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 80px;
+            column-gap: 20px;
+            row-gap: 50px;
+        }
+
+        @media screen and (max-width: 767px) {
+            margin-bottom: 35px;
+            grid-template-columns: 1fr;
+            row-gap: 41.46px;
+        }
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+    }
+
+    &__wrapper-icon {
+        width: 100px;
+        height: 100px;
+        display: flex;
+        margin-bottom: 29px;
+
+        @media screen and (max-width: 1024px) {
+            width: 85px;
+            height: 84px;
+            margin-bottom: 24.52px;
+        }
+
+        @media screen and (max-width: 767px) {
+            width: 75px;
+            height: 74px;
+            margin-bottom: 22px;
+        }
+    }
+
+    &__title {
+        @include font(24px, 28px, 900, $color-title);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+
+        @media screen and (max-width: 1024px) {
+            @include font(18px, 21px, 900, $color-title);
+            margin-bottom: 4px;
+        }
+
+        @media screen and (max-width: 767px) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__text {
+        @include font(18px, 21px, 400, $color-features);
+        text-align: center;
+
+        @media screen and (max-width: 1024px) {
+            @include font(14px, 16px, 400, $color-features);
         }
     }
 }
