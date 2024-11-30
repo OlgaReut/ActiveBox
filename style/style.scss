@@ -313,9 +313,15 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2px;
+    margin-bottom: 114px;
+
+    @media screen and (max-width: 1024px) {
+        margin-bottom: 78px;
+    }
 
     @media screen and (max-width: 767px) {
         grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 35px;
     }
 
     &__wrapper {
@@ -368,10 +374,122 @@ body {
         @include font(24px, 28px, 900, $color-text);
         text-transform: uppercase;
         margin-bottom: 27px;
+        @media screen and (max-width: 1024px) {
+            @include font(18px, 21px, 900, $color-text);
+            margin-bottom: 13px;
+        }
+        @media screen and (max-width: 767px) {
+            margin-bottom: 4.63px;
+        }
     }
 
     &__text {
         @include font(18px, 21px, 400, $color-text);
+        @media screen and (max-width: 1024px) {
+            @include font(14px, 16px, 400, $color-text);
+        }
+    }
+}
+
+.team{
+    padding-bottom: 114px;
+    @media screen and (max-width: 1024px) {
+        padding-bottom: 78.41px;
+    }
+    @media screen and (max-width: 767px) {
+        padding-bottom: 41px;
+    }
+
+    &__container{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 30px;
+        @media screen and (max-width: 1024px) {
+            column-gap: 25px;
+        }
+        @media screen and (max-width: 767px) {
+            grid-template-columns: 1fr;
+            row-gap: 56px;
+        }
+    }
+
+    &__wrapper-img{
+        width: 100%;
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        margin-bottom: 30px;
+       
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    &__name {
+        @include font(24px, 28px, 900, $color-title);
+        margin-bottom: 5.29px;
+        @media screen and (max-width: 1024px) {
+            @include font(18px, 21px, 900, $color-title);
+            margin-bottom: 4.6px;
+        }
+    }
+
+    &__profession{
+        @include font(18px, 21px, 400, $color-button);
+        margin-bottom: 17.86px;
+        text-transform: uppercase;
+        @media screen and (max-width: 1024px) {
+            @include font(14px, 16px, 400, $color-button);
+            margin-bottom: 22.45px;
+        }
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 38.5px;
+        }
+    }
+
+    &__text {
+        @include font(18px, 21px, 400, $color-features);
+        margin-bottom: 37.86px;
+        @media screen and (max-width: 1024px) {
+            @include font(14px, 16px, 400, $color-features);
+            margin-bottom: 39.2px;
+        }
+        @media screen and (max-width: 1024px) {
+            margin-bottom: 55.15px;
+        }
+    }
+
+    &__wrapper-icons {
+        display: flex;
+        column-gap: 6px;
+        @media screen and (max-width: 1024px) {
+            column-gap: 5px;
+        }
+        @media screen and (max-width: 1024px) {
+            column-gap: 6px;
+        }
+    }
+
+    &__icon {
+        width: 39px;
+        height: 39px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #C6CBCD;
+        @media screen and (max-width: 1024px) {
+            width: 32px;
+            height: 32px;
+        }
+        @media screen and (max-width: 1024px) {
+            width: 39px;
+            height: 39px;
+        }
     }
 }
 
