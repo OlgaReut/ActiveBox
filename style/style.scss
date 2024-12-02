@@ -414,20 +414,24 @@ body {
 }
 
 .team{
+    margin-bottom: 114px;
+    @media screen and (max-width: 1024px) {
+        margin-bottom: 78.41px;
+    }
+    @media screen and (max-width: 767px) {
+        margin-bottom: 41px;
+    }
 
     &__container{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         column-gap: 30px;
-        margin-bottom: 114px;
         @media screen and (max-width: 1024px) {
             column-gap: 25px;
-            margin-bottom: 78.41px;
         }
         @media screen and (max-width: 767px) {
             grid-template-columns: 1fr;
             row-gap: 56px;
-            margin-bottom: 41px;
         }
     }
 
@@ -504,16 +508,14 @@ body {
             fill: #E71414;
         }
         &:hover {
-            border: none;
-            transform: scale(2);
+            border: 1px solid #E71414;
         }
         &:active path{
             fill: $color-button;
-            box-shadow: 8px 8px 30px $color-button;
         }
         &:active {
-            border: none;
-            transform: scale(2.5);
+            border: 1px solid $color-button;
+            box-shadow: 8px 8px 30px $color-button;
         }
         @media screen and (max-width: 1024px) {
             width: 32px;
@@ -535,7 +537,6 @@ body {
     }
     @media screen and (max-width: 767px) {
         margin-bottom: 34.51px;
-        grid-template-rows: 0.65fr 1fr;
         grid-template-columns: 1fr;
     }
 
@@ -562,7 +563,7 @@ body {
             padding: 10px 10px 10px 88px;
         }
         @media screen and (max-width: 767px) {
-            padding: 20px 25px 0 20px;
+            padding: 20px 25px 95px 20px;
             align-items: center;
             justify-content: flex-start;
         }
@@ -575,15 +576,14 @@ body {
         font-style: italic;
         @include font(36px, 49px, 400, $color-text);
         text-transform: capitalize;
-        padding: 10px 0;
+        margin-bottom: 17px;
         @media screen and (max-width: 1024px) {
             @include font(24px, 32px, 400, $color-text);
         }
         @media screen and (max-width: 767px) {
-            padding: 20px 25px 0 20px;
-            padding: 0;
             margin-bottom: 20px;
             text-align: center;
+            max-width: 100%;
         }
     }
     &__text {
@@ -591,9 +591,6 @@ body {
         text-transform: uppercase;
         @media screen and (max-width: 1024px) {
             @include font(12px, 14px, 700, $color-text);
-        }
-        @media screen and (max-width: 767px) {
-            margin-bottom: 95px;
         }
     }
 }

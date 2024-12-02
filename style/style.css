@@ -451,25 +451,35 @@ body {
   }
 }
 
+.team {
+  margin-bottom: 114px;
+}
+@media screen and (max-width: 1024px) {
+  .team {
+    margin-bottom: 78.41px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .team {
+    margin-bottom: 41px;
+  }
+}
 .team__container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   -moz-column-gap: 30px;
        column-gap: 30px;
-  margin-bottom: 114px;
 }
 @media screen and (max-width: 1024px) {
   .team__container {
     -moz-column-gap: 25px;
          column-gap: 25px;
-    margin-bottom: 78.41px;
   }
 }
 @media screen and (max-width: 767px) {
   .team__container {
     grid-template-columns: 1fr;
     row-gap: 56px;
-    margin-bottom: 41px;
   }
 }
 .team__wrapper-img {
@@ -577,16 +587,14 @@ body {
   fill: #E71414;
 }
 .team__icon:hover {
-  border: none;
-  transform: scale(2);
+  border: 1px solid #E71414;
 }
 .team__icon:active path {
   fill: #FF4343;
-  box-shadow: 8px 8px 30px #FF4343;
 }
 .team__icon:active {
-  border: none;
-  transform: scale(2.5);
+  border: 1px solid #FF4343;
+  box-shadow: 8px 8px 30px #FF4343;
 }
 @media screen and (max-width: 1024px) {
   .team__icon {
@@ -614,7 +622,6 @@ body {
 @media screen and (max-width: 767px) {
   .testimonials {
     margin-bottom: 34.51px;
-    grid-template-rows: 0.65fr 1fr;
     grid-template-columns: 1fr;
   }
 }
@@ -644,7 +651,7 @@ body {
 }
 @media screen and (max-width: 767px) {
   .testimonials__description {
-    padding: 20px 25px 0 20px;
+    padding: 20px 25px 95px 20px;
     align-items: center;
     justify-content: flex-start;
   }
@@ -659,7 +666,7 @@ body {
   font-weight: 400;
   color: #FFFFFF;
   text-transform: capitalize;
-  padding: 10px 0;
+  margin-bottom: 17px;
 }
 @media screen and (max-width: 1024px) {
   .testimonials__title {
@@ -671,10 +678,9 @@ body {
 }
 @media screen and (max-width: 767px) {
   .testimonials__title {
-    padding: 20px 25px 0 20px;
-    padding: 0;
     margin-bottom: 20px;
     text-align: center;
+    max-width: 100%;
   }
 }
 .testimonials__text {
@@ -690,11 +696,6 @@ body {
     line-height: 14px;
     font-weight: 700;
     color: #FFFFFF;
-  }
-}
-@media screen and (max-width: 767px) {
-  .testimonials__text {
-    margin-bottom: 95px;
   }
 }
 
