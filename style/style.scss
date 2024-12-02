@@ -488,7 +488,7 @@ body {
         @media screen and (max-width: 1024px) {
             column-gap: 5px;
         }
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 767pxpx) {
             column-gap: 6px;
         }
     }
@@ -519,9 +519,81 @@ body {
             width: 32px;
             height: 32px;
         }
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 767px) {
             width: 39px;
             height: 39px;
+        }
+    }
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 114px;
+    @media screen and (max-width: 1024px) {
+        margin-bottom: 110px;
+    }
+    @media screen and (max-width: 767px) {
+        margin-bottom: 34.51px;
+        grid-template-rows: 0.65fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    &__wrapper-img {
+        width: 100%;
+        aspect-ratio: 1/0.66;
+        overflow: hidden;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__description {
+        background-color: #5C3249;
+        padding: 10px 10px 10px 129px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        @media screen and (max-width: 1024px) {
+            padding: 10px 10px 10px 88px;
+        }
+        @media screen and (max-width: 767px) {
+            padding: 20px 25px 0 20px;
+            align-items: center;
+            justify-content: flex-start;
+        }
+    }
+
+    &__title {
+        max-width: 471px;
+        width: 100%;
+        font-family: $Cardo;
+        font-style: italic;
+        @include font(36px, 49px, 400, $color-text);
+        text-transform: capitalize;
+        padding: 10px 0;
+        @media screen and (max-width: 1024px) {
+            @include font(24px, 32px, 400, $color-text);
+        }
+        @media screen and (max-width: 767px) {
+            padding: 20px 25px 0 20px;
+            padding: 0;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    }
+    &__text {
+        @include font(13px, 15px, 700, $color-text);
+        text-transform: uppercase;
+        @media screen and (max-width: 1024px) {
+            @include font(12px, 14px, 700, $color-text);
+        }
+        @media screen and (max-width: 767px) {
+            margin-bottom: 95px;
         }
     }
 }
