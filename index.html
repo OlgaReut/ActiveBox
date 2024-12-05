@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>  
+
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
@@ -262,11 +265,62 @@
         </div>
     </div>
     <div class="testimonials" id="testimonials">
-        <div class="testimonials__wrapper-img"><img class="testimonials__img" src="media/testimonials.jpg" alt="testimonials"></div>
+         
+        <!-- Slider main container -->
+        <div class="swiper swiper-review">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+            <!-- Slides -->
+                <div class="swiper-slide">
+                    <div class="testimonials__wrapper-img">
+                        <img class="testimonials__img" src="media/testimonials.jpg" alt="testimonials">
+                    </div>
+                    <div class="testimonials__description">
+                        <h3 class="testimonials__title">Slide 1</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonials__wrapper-img"><img class="testimonials__img" src="media/testimonials.jpg" alt="testimonials"></div>
+                    <div class="testimonials__description">
+                        <h3 class="testimonials__title">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</h3>
+                        <p class="testimonials__text">Susan Sims, Interaction Designer at XYZ</p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonials__wrapper-img">
+                        <img class="testimonials__img" src="media/testimonials.jpg" alt="testimonials">
+                    </div>
+                    <div class="testimonials__description">
+                        <h3 class="testimonials__title">Slide 3</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonials__wrapper-img">
+                        <img class="testimonials__img" src="media/testimonials.jpg" alt="testimonials">
+                    </div>
+                    <div class="testimonials__description">
+                        <h3 class="testimonials__title">Slide 4</h3>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonials__wrapper-img">
+                        <img class="testimonials__img" src="media/testimonials.jpg" alt="testimonials">
+                    </div>
+                    <div class="testimonials__description">
+                        <h3 class="testimonials__title">Slide 5</h3>
+                    </div>
+                </div>
+            
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- <div class="testimonials__wrapper-img"><img class="testimonials__img" src="media/testimonials.jpg" alt="testimonials"></div>
         <div class="testimonials__description">
             <h3 class="testimonials__title">“Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Aenean eu leo quam...”</h3>
             <p class="testimonials__text">Susan Sims, Interaction Designer at XYZ</p>
-        </div>
+        </div> -->
     </div>
     <section class="download" id="download">
         <div class="container download__container">
@@ -314,5 +368,20 @@
             <p class="footer__copyright-text">Copyright © 2015 ActiveBox. All Rights Reserved Made with <span>by Kamal Chaneman</span></p>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-review', {
+        // Optional parameters
+            loop: true,
+            autoHeight: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            }
+        });
+    </script>
 </body>
 </html>

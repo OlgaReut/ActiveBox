@@ -200,15 +200,14 @@ body {
             position: absolute;
             bottom: 0;
             left: 0;
+            transition: all 0.3s linear;
         }
         &:hover::before{
             background-color: $color-border;
-            transition: all 0.3s linear;
         }
 
         &:active::before {
             background-color: #E71414;
-            transition: all 0.3s linear;
         }
         .header__nav-link:active {
             color: #E71414;
@@ -491,7 +490,7 @@ body {
         margin-bottom: 37.86px;
         @media screen and (max-width: 1024px) {
             @include font(14px, 16px, 400, $color-features);
-            margin-bottom: 39..15px;
+            margin-bottom: 39.15px;
         }
         @media screen and (max-width: 767px) {
             margin-bottom: 55.15px;
@@ -543,10 +542,33 @@ body {
     }
 }
 
-.testimonials {
+.swiper {
+    width: 100%;
+    // height: 300px;
+    margin-bottom: 104px;
+    padding-bottom: 45px;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    display: flex;
+    justify-content: center;
+    column-gap: 25px;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    background-color: transparent;
+    border: 1px solid #7E5D6F;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    background-color: #7E5D6F;
+}
+.swiper-slide {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-bottom: 176px;
+    // margin-bottom: 20px;
     @media screen and (max-width: 1024px) {
         margin-bottom: 110px;
     }
@@ -555,19 +577,20 @@ body {
         grid-template-columns: 1fr;
     }
 
-    &__wrapper-img {
+    .testimonials__wrapper-img {
         width: 100%;
+        height: 100%;
         aspect-ratio: 1/0.66;
         overflow: hidden;
     }
 
-    &__img {
+    .testimonials__img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 
-    &__description {
+    .testimonials__description {
         background-color: #5C3249;
         padding: 29px 10px 10px 114px;
         display: flex;
@@ -584,7 +607,7 @@ body {
         }
     }
 
-    &__title {
+    .testimonials__title {
         max-width: 471px;
         width: 100%;
         font-family: $Cardo;
@@ -601,7 +624,7 @@ body {
             max-width: 100%;
         }
     }
-    &__text {
+    .testimonials__text {
         @include font(13px, 15px, 700, $color-text);
         text-transform: uppercase;
         @media screen and (max-width: 1024px) {
