@@ -111,13 +111,32 @@ body {
         padding: 26px 5px;
         border: none;
         cursor: pointer;
-        transition: all 0.3s linear;
+        transition: all 0.5s linear;
+        position: relative;
+        z-index: 0;
 
-        &:hover {
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background-color: #E71414;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            transition-property: transform;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-out;
         }
 
-        &:active {
+        &:hover::before {
+            transform: scaleX(1);
+            transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+        }
+
+        &:active::before {
             background-color: $color-button;
             box-shadow: 4px 4px 30px 0 $color-button;
         }
@@ -163,10 +182,20 @@ body {
         }
     }
 
+    @keyframes pulse {
+        25% {
+            transform: scale(1.1);
+        }
+        75% {
+            transform: scale(0.9);
+        }
+    }
+
     &__wrapper-icon {
         display: flex;
         max-width: 183.86px;
         width: 100%;
+        animation: pulse 2s linear infinite;
 
         @media screen and (max-width: 767px) {
             max-width: 103.47px;
@@ -177,65 +206,71 @@ body {
         @media screen and (max-width: 767px) {
             display: none;
         }
-    }
 
-    &__nav-list {
-        display: flex;
-        list-style: none;
-    }
+        &-list {
+            display: flex;
+            list-style: none;
+        }
 
-    &__nav-item {
-        min-width: 134px;
-        text-align: center;
-        position: relative;
+        &-item {
+            min-width: 134px;
+            text-align: center;
+            position: relative;
 
-        &::before {
-            content: '';
+            &::before {
+                content: '';
+                // display: block;
+                // width: 100%;
+                height: 3px;
+                background-color: $color-border;
+                position: absolute;
+                bottom: 0;
+                left: 51%;
+                right: 51%;
+                // transition: all 0.3s linear;
+                transition-property: left, right;
+                transition-duration: 0.3s;
+                transition-timing-function: ease-out;
+            }
+            &:hover::before{
+                left: 0;
+                right: 0;
+                background-color: $color-border;
+            }
+
+            &:active::before {
+                background-color: #E71414;
+            }
+            .header__nav-link:active {
+                color: #E71414;
+                transition: all 0.3s linear;
+            }
+
+            @media screen and (max-width: 1024px) {
+                min-width: 112px;
+            }
+
+            @media screen and (max-width: 810px) {
+                min-width: max-content;
+                padding: 0 10px;
+            }
+        }
+        
+        &-link {
+            text-decoration: none;
+            @include font(13px, 22px, 700, $color-text);
+            text-transform: uppercase;
+            padding-top: 43px;
+            padding-bottom: 35px;
             display: block;
-            width: 100%;
-            height: 3px;
-            background-color: transparent;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            transition: all 0.3s linear;
-        }
-        &:hover::before{
-            background-color: $color-border;
-        }
 
-        &:active::before {
-            background-color: #E71414;
-        }
-        .header__nav-link:active {
-            color: #E71414;
-            transition: all 0.3s linear;
-        }
-
-        @media screen and (max-width: 1024px) {
-            min-width: 112px;
-        }
-
-        @media screen and (max-width: 810px) {
-            min-width: max-content;
-            padding: 0 10px;
+            @media screen and (max-width: 1024px) {
+                @include font(12px, 30px, 700, $color-text);
+                padding-top: 34px;
+            }
         }
     }
-
-    &__nav-link {
-        text-decoration: none;
-        @include font(13px, 22px, 700, $color-text);
-        text-transform: uppercase;
-        padding-top: 43px;
-        padding-bottom: 35px;
-        display: block;
-
-        @media screen and (max-width: 1024px) {
-            @include font(12px, 30px, 700, $color-text);
-            padding-top: 34px;
-        }
-    }
-
+    
     &__menu {
         display: none;
 
@@ -706,13 +741,32 @@ body {
         padding: 26px 5px;
         border: none;
         cursor: pointer;
-        transition: all 0.3s linear;
+        transition: all 0.5s linear;
+        position: relative;
+        z-index: 0;
 
-        &:hover {
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background-color: #E71414;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            transition-property: transform;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-out;
         }
 
-        &:active {
+        &:hover::before {
+            transform: scaleX(1);
+            transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+        }
+
+        &:active::before {
             background-color: $color-button;
             box-shadow: 4px 4px 30px 0 $color-button;
         }
@@ -854,16 +908,6 @@ body {
                 margin-bottom: 38.8px;
             }
         }
-
-        &-text {
-
-            @media screen and (max-width: 767px){
-                max-width: 280px;
-                width: 100%;
-                margin: 0 auto;  
-            }
-            
-        }
     }
 
     &__copyright {
@@ -878,16 +922,16 @@ body {
         }
 
         .footer__container-copyright {
-            max-width: 370px;
+            max-width: 410px;
             width: 100%;
             margin: 0 auto;
+            padding: 0 20px;
         }
 
         &-text {
             text-transform: capitalize;
             @include font(18px, 21px, 400, #808080);
             @media screen and (max-width: 1024px) {
-                max-width: 314px;
                 @include font(14px, 16px, 400, #808080);
             }
         }
