@@ -284,6 +284,10 @@ body {
             border: none;
             cursor: pointer;
         }
+
+        & svg:last-child {
+            display: none;
+        }
     }
 
     &__menu-burger {
