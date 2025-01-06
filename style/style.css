@@ -298,6 +298,32 @@ body {
     cursor: pointer;
   }
 }
+.header__menu-burger {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .header__menu-burger--exist {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 28px;
+    background-color: rgba(44, 49, 84, 0.9);
+  }
+}
+.header__menu-burger--exist .header__menu-list {
+  list-style: none;
+}
+.header__menu-burger--exist .header__menu-item {
+  padding: 24px 10px 24px;
+}
+.header__menu-burger--exist .header__menu-link {
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  text-decoration: none;
+}
 
 .features {
   margin-bottom: 136px;
@@ -609,7 +635,7 @@ body {
          column-gap: 5px;
   }
 }
-@media screen and (max-width: 767pxpx) {
+@media screen and (max-width: 767px) {
   .team__wrapper-icons {
     -moz-column-gap: 6px;
          column-gap: 6px;
