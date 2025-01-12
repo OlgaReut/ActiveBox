@@ -284,6 +284,39 @@ body {
             border: none;
             cursor: pointer;
         }
+
+        & svg:last-child {
+            display: none;
+        }
+    }
+
+    &__menu-burger {
+        display: none;
+
+        &--exist {
+            @media screen and (max-width: 767px) {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 28px;
+                background-color: rgba(44, 49, 84, 0.9);
+            }
+
+            .header__menu-list {
+                list-style: none;
+            }
+
+            .header__menu-item {
+                padding: 24px 10px 24px;
+            }
+
+            .header__menu-link {
+                @include font(13px, 15px, 700, $color-text);
+                text-transform: uppercase;
+                
+                text-decoration: none;
+            }
+        }
     }
 }
 
@@ -536,7 +569,7 @@ body {
         @media screen and (max-width: 1024px) {
             column-gap: 5px;
         }
-        @media screen and (max-width: 767pxpx) {
+        @media screen and (max-width: 767px) {
             column-gap: 6px;
         }
     }
