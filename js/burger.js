@@ -1,7 +1,7 @@
 const burger = document.querySelector('.header__menu');
 const burgerSvg = document.querySelectorAll('.header__menu svg');
 const menu = document.querySelector('.header__menu-burger');
-const burgerLink = document.querySelectorAll('.header__menu-link');
+const burgerList = document.querySelector('.header__menu-list');
 
 burger.onclick = function () {
     if(!menu.classList.contains('header__menu-burger--exist')) {
@@ -13,4 +13,10 @@ burger.onclick = function () {
         burgerSvg[0].style.display = 'flex';
         burgerSvg[1].style.display = 'none';
     }
+}
+
+burgerList.onclick = function () {
+    menu.classList.remove('header__menu-burger--exist');
+    burgerSvg[0].style.display = 'flex';
+    burgerSvg[1].style.display = 'none';
 }
